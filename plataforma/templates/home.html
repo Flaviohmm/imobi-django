@@ -19,8 +19,8 @@
                             <img src="{{album.logo_album.url}}" style="width:100px">
                         </a>
                     </span>
-                    <span style="color: #007bff">{{album.nome_album}} by</span>
-                    <a href="{% url 'plataforma:detalhe_perfil' username=album.nome_album %}" class="home-a">
+                    <span style="color: #007bff;">{{album.nome_album}} by</span>
+                    <a href="{% url 'plataforma:detalhe_perfil' username=album.artista_album %}" class="home-a">
                         {{album.artista_album}}
                     </a>
                 </li>

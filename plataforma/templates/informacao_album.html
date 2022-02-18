@@ -15,6 +15,19 @@
         <br>
         {% if album.artista_album == user %}
             <a href="{% url 'plataforma:deletar_album' username album %}" class="btn btn-danger">Deletar</a>
+            <a href="{% url 'plataforma:adicionar_musica' username album %}" class="btn btn-primary">
+                Adicionar nova música
+            </a>
         {% endif %}
+        {% for musica in musicas %}
+            <li class="margin_top">
+                {{musica.nome_musica}}
+                <br>
+                <audio controls>
+                    <source src="{{musica.arquivo_musica.url}}" type="audio/mp3">
+                </audio>
+            </li>
+            <hr>
+        {% endfor %}
     </ul>
 {% endblock 'body' %}
